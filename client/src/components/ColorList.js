@@ -21,7 +21,7 @@ const ColorList = ({ colors, updateColors, getColors }) => {
     axiosWithAuth()
       .put(`http://localhost:5000/api/colors/${colorToEdit.id}`, colorToEdit)
       .then(response => getColors())
-      .catch(err => console.log(err))
+      .catch(error => console.log("I am BROKEN! :( ", error))
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
@@ -29,6 +29,15 @@ const ColorList = ({ colors, updateColors, getColors }) => {
 
   const deleteColor = color => {
     // make a delete request to delete this color
+    axiosWithAuth()
+      .delete(`http://localhost:5000/api/colors/${color.id}`)
+      .then(response => getColors())
+      .catch(error => {
+        console.log(
+          "Place an error message here, but I am too tired to be creative!",
+          error
+        )
+      })
   }
 
   return (

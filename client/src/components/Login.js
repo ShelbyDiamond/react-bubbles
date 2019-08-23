@@ -6,8 +6,8 @@ const Login = props => {
   // when you have handled the token, navigate to the BubblePage route
   // credentials are username and password used to login
   const [credentials, setCredentials] = useState({
-    username: "",
-    password: ""
+    username: "Lambda School",
+    password: "i<3Lambd4"
   })
 
   const handleChanger = event => {
